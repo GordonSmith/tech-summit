@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "module": "ES2022",
+    "target": "ES2022",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "lib": [
+      "es2022",
+      "DOM"
+    ],
+    "rootDir": "src-client",
+    "outDir": "build"
+  },
+  "include": [
+    "./src-client/**/*.ts*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

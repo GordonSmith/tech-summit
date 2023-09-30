@@ -1,0 +1,43 @@
+# This file describes a Fastly Compute@Edge package. To learn more visit:
+# https://developer.fastly.com/reference/fastly-toml/
+
+authors = ["GordonJSmith@gmail.com"]
+description = ""
+language = "rust"
+manifest_version = 3
+name = "tech-summit"
+service_id = "3qrkLJZMrQHWn5b6n6c8n6"
+
+[scripts]
+  build = "npm run bundle-client-production && cargo build --bin fastly-compute-project --release --target wasm32-wasi --color always"
+
+[local_server]
+
+  [local_server.backends]
+
+    [local_server.backends.github]
+      url = "https://api.github.com"
+
+    [local_server.backends.play]
+      url = "https://play.hpccsystems.com:18010"
+
+  [local_server.config_stores]
+
+    [local_server.config_stores.global]
+      format = "inline-toml"
+
+      [local_server.config_stores.global.contents]
+        gh_actor = "GordonSmith"
+        gh_token = "XXXXXXXXXXXXXXXXXXXXXXXXX"
+
+  [local_server.geolocation]
+    format = "inline-toml"
+
+    [local_server.geolocation.addresses]
+
+      [local_server.geolocation.addresses."127.0.0.1"]
+        as_name = "Dummy, Inc."
+        city = "New York"
+        latitude = 1.23
+        longitude = 1.23
+        
