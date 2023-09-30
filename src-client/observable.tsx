@@ -11,6 +11,8 @@ export const useStyles = makeStyles({
     },
 });
 
+const notebookCache = new Map<TabValue, compileFunc>();
+
 export interface ObservableProps {
     path: TabValue;
 }
@@ -25,18 +27,23 @@ export const Observable: React.FunctionComponent<ObservableProps> = ({
     const forceUpdate = useForceUpdate();
 
     React.useEffect(() => {
-        setNotebook({ notebook: undefined });
-        fetch(`/fetch?path=${path}`).then(response => {
-            return response.text();
-        }).then(text => {
-            return omd2notebook(text);
-        }).then(ohqnb => {
-            return compile(ohqnb);
-        }).then(compiledNB => {
-            setNotebook({ notebook: compiledNB });
-        }).catch(e => {
-            console.error(e.message);
-        });
+        if (notebookCache.has(path)) {
+            setNotebook({ notebook: notebookCache.get(path) });
+        } else if (!notebookCache.has(path)) {
+            setNotebook({ notebook: undefined });
+            fetch(`/fetch?path=${path}`).then(response => {
+                return response.text();
+            }).then(text => {
+                return omd2notebook(text);
+            }).then(ohqnb => {
+                return compile(ohqnb);
+            }).then(compiledNB => {
+                notebookCache.set(path, compiledNB);
+                setNotebook({ notebook: compiledNB });
+            }).catch(e => {
+                console.error(e.message);
+            });
+        }
     }, [path]);
 
     React.useEffect(() => {

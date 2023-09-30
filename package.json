@@ -4,9 +4,9 @@
   "type": "module",
   "scripts": {
     "clean": "rimraf bin build dist pkg target",
-    "bundle-client": "npx -y esbuild --bundle --platform=browser --format=esm --outdir=./dist ./src-client/index.tsx",
+    "bundle-client": "npx -y esbuild --bundle --platform=browser --format=esm --sourcemap --outdir=./dist ./src-client/index.tsx",
     "bundle-client-watch": "npm run bundle-client -- --watch --servedir=.",
-    "bundle-client-production": "npm run bundle-client -- --tree-shaking=true --minify --sourcemap --target=es2020",
+    "bundle-client-production": "npm run bundle-client -- --tree-shaking=true --minify --target=es2020",
     "prebuild": "npm run bundle-client-production",
     "build": "fastly compute build",
     "serve": "fastly compute serve --watch",

@@ -18,8 +18,11 @@ function removeExtensionAndCapatilize(name: string) {
 }
 
 function pickIcon(name: string) {
-    if (name.toLowerCase() === ("ai.md")) {
-        return <BrainCircuitRegular />;
+    switch (name.toLowerCase()) {
+        case "home":
+            return <HomeFilled />;
+        case "ai.md":
+            return <BrainCircuitRegular />;
     }
     return <ChevronCircleRightRegular />;
 }
@@ -85,7 +88,7 @@ export const Main = (props: Partial<ToolbarProps>) => {
             }
             return response.json();
         }).then(json => {
-            setTabItems(json);
+            setTabItems([{ name: "home", path: "README.md" }, ...json]);
         }).catch(e => {
             console.error(e.message);
         });
@@ -136,7 +139,6 @@ export const Main = (props: Partial<ToolbarProps>) => {
         </header>
         <nav className={classes.left}>
             <TabList defaultSelectedValue="home" selectedValue={selectedValue} onTabSelect={onTabSelect} vertical size="large" >
-                {<Tab value="home" title="Home" icon={<HomeFilled />}>Home</Tab>}
                 {
                     tabItems.length === 0 ?
                         <Spinner size="small" labelPosition="below" label="Fetching from GitHub" /> :
@@ -148,7 +150,6 @@ export const Main = (props: Partial<ToolbarProps>) => {
         </nav>
         <main className={classes.main}>
             <div>
-                {selectedValue === "home" && <Placeholder />}
                 {selectedValue !== "home" && <Observable path={path} />}
             </div>
         </main>

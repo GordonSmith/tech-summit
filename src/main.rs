@@ -120,17 +120,8 @@ fn main(req: Request) -> Result<Response, Error> {
         "/test" => {
             let global = ConfigStore::open("global");
             let gh_actor = global.get("gh_actor").unwrap();
-            let gh_token = global.get("gh_token").unwrap();
 
             Ok(Response::from_status(StatusCode::OK).with_body_text_plain(gh_actor.as_str()))
-        }
-
-        "/test2" => {
-            let global = ConfigStore::open("global");
-            let gh_actor = global.get("gh_actor").unwrap();
-            let gh_token = global.get("gh_token").unwrap();
-
-            Ok(Response::from_status(StatusCode::OK).with_body_text_plain(gh_token.as_str()))
         }
 
         // Catch all other requests and return a 404.
