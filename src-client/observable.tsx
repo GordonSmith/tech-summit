@@ -27,23 +27,31 @@ export const Observable: React.FunctionComponent<ObservableProps> = ({
     const forceUpdate = useForceUpdate();
 
     React.useEffect(() => {
-        if (notebookCache.has(path)) {
-            setNotebook({ notebook: notebookCache.get(path) });
-        } else if (!notebookCache.has(path)) {
-            setNotebook({ notebook: undefined });
-            fetch(`/fetch?path=${path}`).then(response => {
-                return response.text();
-            }).then(text => {
-                return omd2notebook(text);
-            }).then(ohqnb => {
-                return compile(ohqnb);
-            }).then(compiledNB => {
-                notebookCache.set(path, compiledNB);
-                setNotebook({ notebook: compiledNB });
-            }).catch(e => {
-                console.error(e.message);
-            });
+        let cancel = false;
+        if (path) {
+            if (notebookCache.has(path)) {
+                setNotebook({ notebook: notebookCache.get(path) });
+            } else {
+                setNotebook({ notebook: undefined });
+                fetch(`/fetch?path=${path}`).then(response => {
+                    return response.text();
+                }).then(text => {
+                    return omd2notebook(text);
+                }).then(ohqnb => {
+                    return compile(ohqnb);
+                }).then(compiledNB => {
+                    if (cancel === false) {
+                        notebookCache.set(path, compiledNB);
+                        setNotebook({ notebook: compiledNB });
+                    }
+                }).catch(e => {
+                    console.error(e.message);
+                });
+            }
         }
+        return () => {
+            cancel = true;
+        };
     }, [path]);
 
     React.useEffect(() => {

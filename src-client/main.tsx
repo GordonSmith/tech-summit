@@ -77,9 +77,9 @@ const useClasses = makeStyles({
 export const Main = (props: Partial<ToolbarProps>) => {
 
     useStaticStyles();
-    const [selectedValue, setSelectedValue] = React.useState<TabValue>("home");
-    const [tabItems, setTabItems] = React.useState<{ name: string, path: string }[]>([]);
-    const [path, setPath] = React.useState<TabValue>("");
+    const [selectedValue, setSelectedValue] = React.useState<TabValue>("README.md");
+    const [tabItems, setTabItems] = React.useState<{ name: string, path: string }[]>([{ name: "home", path: "README.md" }]);
+    const [path, setPath] = React.useState<TabValue>("README.md");
 
     React.useEffect(() => {
         fetch("/list").then(response => {
@@ -98,15 +98,6 @@ export const Main = (props: Partial<ToolbarProps>) => {
         setSelectedValue(data.value);
         setPath(data.value);
     };
-
-    React.useEffect(() => {
-        const items = tabItems.filter((item: any) => item.name === selectedValue);
-        if (items[0]) {
-            setPath(items[0].path);
-        } else {
-            setPath("");
-        }
-    }, [tabItems]);
 
     const classes = useClasses();
 
@@ -138,7 +129,7 @@ export const Main = (props: Partial<ToolbarProps>) => {
             </Toolbar>
         </header>
         <nav className={classes.left}>
-            <TabList defaultSelectedValue="home" selectedValue={selectedValue} onTabSelect={onTabSelect} vertical size="large" >
+            <TabList defaultSelectedValue={"README.md"} selectedValue={selectedValue} onTabSelect={onTabSelect} vertical size="large" >
                 {
                     tabItems.length === 0 ?
                         <Spinner size="small" labelPosition="below" label="Fetching from GitHub" /> :
@@ -150,7 +141,7 @@ export const Main = (props: Partial<ToolbarProps>) => {
         </nav>
         <main className={classes.main}>
             <div>
-                {selectedValue !== "home" && <Observable path={path} />}
+                <Observable path={path} />
             </div>
         </main>
         <nav className={classes.right}></nav>
