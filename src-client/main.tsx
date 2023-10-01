@@ -25,7 +25,7 @@ function pickIcon(name: string) {
             return <BrainCircuitRegular />;
         case "runtimes.md":
             return <GlobeShieldRegular />;
-        case "videos.md":
+        case "videos.omd":
             return <VideoClipMultipleRegular />;
     }
     return <ChevronCircleRightRegular />;
