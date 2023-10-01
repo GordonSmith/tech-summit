@@ -1,6 +1,6 @@
 {
-    "type": "notebook",
     "id": "24aa1d51ca1b7b9d",
+    "type": "notebook",
     "slug": "testing-projection-visibility",
     "trashed": false,
     "description": "",
@@ -130,83 +130,93 @@
     "nodes": [
         {
             "id": 0,
+            "name": null,
             "value": "md`# Testing Projection Visibility\n\nThis notebook demonstrates how to test if a point is visible in the given projection using a custom [*projection*.stream](https://github.com/d3/d3-geo/blob/master/README.md#projection_stream). Try dragging the globe below; the set of visible points will update accordingly.`",
             "pinned": false,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 40,
+            "name": null,
             "value": "visiblePoints",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 37,
+            "name": null,
             "value": "function tester(projection) {\n  let visible;\n  const stream = projection.stream({point() { visible = true; }});\n  return ([x, y]) => (visible = false, stream.point(x, y), visible);\n}",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 29,
+            "name": null,
             "value": "viewof visiblePoints = {\n  const context = DOM.context2d(width, height);\n\n  const projection = d3.geoOrthographic()\n      .fitExtent([[-1, -1], [width + 1, height + 1]], sphere)\n      .clipExtent([[-1, -1], [width + 1, height + 1]])\n      .rotate([0, -30]);\n\n  const path = d3.geoPath(projection, context)\n      .pointRadius(1.5);\n\n  function render() {\n    context.clearRect(0, 0, width, height);\n\n    context.beginPath();\n    path(graticule);\n    context.lineWidth = 0.5;\n    context.strokeStyle = \"#aaa\";\n    context.stroke();\n\n    context.beginPath();\n    path(land);\n    context.fillStyle = \"#ddd\";\n    context.fill();\n\n    context.beginPath();\n    path(sphere);\n    context.lineWidth = 1.5;\n    context.strokeStyle = \"#000\";\n    context.stroke();\n\n    context.beginPath();\n    path({type: \"MultiPoint\", coordinates: points});\n    context.fillStyle = \"#000\";\n    context.fill();\n\n    context.canvas.value = points.filter(tester(projection));\n    context.canvas.dispatchEvent(new CustomEvent(\"input\"));\n  }\n\n  return d3.select(context.canvas)\n    .call(zoom(projection).on(\"zoom.render\", render))\n    .call(render)\n    .node();\n}",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 24,
+            "name": null,
             "value": "height = width",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 22,
+            "name": null,
             "value": "sphere = ({type: \"Sphere\"})",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 21,
+            "name": null,
             "value": "graticule = d3.geoGraticule10()",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 9,
+            "name": null,
             "value": "points = (await FileAttachment(\"airports.csv\").csv()).map(({longitude, latitude}) => [+longitude, +latitude])",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 15,
+            "name": null,
             "value": "land = FileAttachment(\"land-110m.json\").json().then(world => topojson.feature(world, world.objects.land))",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         },
         {
             "id": 7,
+            "name": null,
             "value": "import {zoom} from \"@d3/versor-zooming\"",
             "pinned": true,
             "mode": "js",
             "data": null,
-            "name": null
+            "outputs": []
         }
     ],
     "resolutions": []

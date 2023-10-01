@@ -1,6 +1,6 @@
 import * as React from "react";
-import { MoreHorizontalFilled, ChevronCircleRightRegular, GridDotsFilled, HomeFilled, BrainCircuitRegular } from "@fluentui/react-icons";
-import { Toolbar, ToolbarButton, ToolbarDivider, Menu, MenuTrigger, MenuPopover, MenuList, MenuItem, MenuItemLink, Title2, TabList, Tab, makeStyles, ToolbarGroup, shorthands, LargeTitle, makeStaticStyles, Spinner, } from "@fluentui/react-components";
+import { MoreHorizontalFilled, ChevronCircleRightRegular, VideoClipMultipleRegular, EngineRegular, GridDotsFilled, HomeFilled, BrainCircuitRegular } from "@fluentui/react-icons";
+import { Toolbar, ToolbarButton, ToolbarDivider, Menu, MenuTrigger, MenuPopover, MenuList, MenuItem, MenuItemLink, Title2, TabList, Tab, makeStyles, ToolbarGroup, shorthands, LargeTitle, makeStaticStyles, Spinner, Link, } from "@fluentui/react-components";
 import type { SelectTabData, SelectTabEvent, TabValue, ToolbarProps } from "@fluentui/react-components";
 import { GitHubLogoIcon } from "@fluentui/react-icons-mdl2";
 import { Observable } from "./observable";
@@ -23,6 +23,10 @@ function pickIcon(name: string) {
             return <HomeFilled />;
         case "ai.md":
             return <BrainCircuitRegular />;
+        case "runtimes.md":
+            return <EngineRegular />;
+        case "videos.md":
+            return <VideoClipMultipleRegular />;
     }
     return <ChevronCircleRightRegular />;
 }
@@ -70,7 +74,8 @@ const useClasses = makeStyles({
         ...shorthands.gridArea("right")
     },
     footer: {
-        ...shorthands.gridArea("footer")
+        ...shorthands.gridArea("footer"),
+        textAlign: "right"
     }
 });
 
@@ -141,10 +146,10 @@ export const Main = (props: Partial<ToolbarProps>) => {
         </nav>
         <main className={classes.main}>
             <div>
-                <Observable path={path} />
+                <Observable path={"" + path} />
             </div>
         </main>
         <nav className={classes.right}></nav>
-        <div className={classes.footer}></div>
+        <div className={classes.footer}><Link href="https://github.com/GordonSmith/tech-summit">https://github.com/GordonSmith/tech-summit</Link></div>
     </div>;
 }

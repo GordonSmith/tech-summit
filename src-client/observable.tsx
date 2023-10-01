@@ -2,19 +2,27 @@ import React from "react";
 import { Field, ProgressBar, TabValue, makeStyles } from "@fluentui/react-components";
 import { useConst, useForceUpdate } from "@fluentui/react-hooks"
 import { Library, Runtime, Inspector } from "@observablehq/runtime";
-import { compile, compileFunc, omd2notebook } from "@hpcc-js/observablehq-compiler";
+import { compile, compileFunc, ojs2notebook, omd2notebook } from "@hpcc-js/observablehq-compiler";
 
 import "@hpcc-js/observablehq-compiler/dist/index.esm.css";
+
+const notebookCache = new Map<TabValue, compileFunc>();
+
+function fileExtension(path: string) {
+    const parts = path.split(".");
+    if (parts.length > 1) {
+        return parts[parts.length - 1];
+    }
+    return "";
+}
 
 export const useStyles = makeStyles({
     root: {
     },
 });
 
-const notebookCache = new Map<TabValue, compileFunc>();
-
 export interface ObservableProps {
-    path: TabValue;
+    path: string;
 }
 
 export const Observable: React.FunctionComponent<ObservableProps> = ({
@@ -34,9 +42,23 @@ export const Observable: React.FunctionComponent<ObservableProps> = ({
             } else {
                 setNotebook({ notebook: undefined });
                 fetch(`/fetch?path=${path}`).then(response => {
-                    return response.text();
+                    switch (fileExtension(path)) {
+                        case "ojsnb":
+                            return response.json();
+                        default:
+                            return response.text();
+                    }
                 }).then(text => {
-                    return omd2notebook(text);
+                    switch (fileExtension(path)) {
+                        case "ojsnb":
+                            return text;
+                        case "ojs":
+                            return ojs2notebook(text);
+                        case "omd":
+                        case "md":
+                        default:
+                            return omd2notebook(text);
+                    }
                 }).then(ohqnb => {
                     return compile(ohqnb);
                 }).then(compiledNB => {

@@ -1,5 +1,7 @@
 {
     "cSpell.words": [
         "runtimes"
-    ]
+    ],
+    "ecl.launchConfiguration": "not found",
+    "ecl.targetCluster": {}
 }

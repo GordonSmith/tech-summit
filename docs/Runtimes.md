@@ -1,29 +1,35 @@
 # WebAssembly Runtimes
 
-_There are many WebAssembly host runtimes. This page is an opinionated short list or the main ones._
+_There are many WebAssembly host runtimes. This page is an opinionated short list of the main ones._
 
-## CONTENTS
+## Recommended
 
-- [aWsm](#awsm) <sup><sup>:rocket:</sup></sup></br>
-- [EOSVM](#eosvm) <sup><sup>:rocket:</sup></sup></br>
-- [Extism](#extism) <sup><sup>:rocket:</sup></sup></br>
-- [Fizzy](#fizzy) <sup><sup>:rocket:</sup></sup></br>
-- [GraalWASM](#graalwasm) <sup><sup>:rocket:</sup></sup></br>
-- [inNative](#innative) <sup><sup>:rocket:</sup></sup></br>
-- [Lucet](#lucet) <sup><sup>:rocket:</sup></sup></br>
-- [wasm3](#wasm3) <sup><sup>:rocket:</sup></sup></br>
-- [Swam](#swam) <sup><sup>:rocket:</sup></sup></br>
-- [WAKit](#wakit) <sup><sup>:rocket:</sup></sup></br>
-- [WasmEdge](#wasmedge) <sup><sup>:rocket:</sup></sup></br>
-- [Wasmer](#wasmer) <sup><sup>:rocket:</sup></sup></br>
-- [Wasmi](#wasmi) <sup><sup>:rocket:</sup></sup></br>
-- [Wasmo](#wasmo) <sup><sup>:rocket:</sup></sup></br>
-- [Wasmtime](#wasmtime) <sup><sup>:rocket:</sup></sup></br>
-- [WasmVM](#wasmvm1) <sup><sup>:rocket:</sup></sup></br>
-- [WAVM](#wavm) <sup><sup>:rocket:</sup></sup></br>
-- [WebAssembly Micro Runtime](#wamr) <sup><sup>:rocket:</sup></sup></br>
-- [TWVM](#twvm) <sup><sup>:rocket:</sup></sup></br>
-- [wazero](#wazero) <sup><sup>:rocket:</sup></sup></br>
+- [Wasmtime](#wasmtime) 
+- [WebAssembly Micro Runtime](#wamr) 
+- [WasmEdge](#wasmedge) 
+- [Wasmer](#wasmer) 
+- [wazero](#wazero) 
+
+## Easy multi language plugin engine
+
+- [Extism](#extism) 
+
+## Other
+
+- [aWsm](#awsm) 
+- [EOSVM](#eosvm) 
+- [Fizzy](#fizzy) 
+- [GraalWASM](#graalwasm) 
+- [inNative](#innative) 
+- [Lucet](#lucet) 
+- [wasm3](#wasm3) 
+- [Swam](#swam) 
+- [WAKit](#wakit) 
+- [Wasmi](#wasmi) 
+- [Wasmo](#wasmo) 
+- [WasmVM](#wasmvm1) 
+- [WAVM](#wavm) 
+- [TWVM](#twvm) 
 
 ----------------
 
@@ -91,63 +97,6 @@ _There are many WebAssembly host runtimes. This page is an opinionated short lis
     </tr>
     </table>
 
-
-## <a name="cmm"></a>[CMM of Wasm](https://github.com/SimonJF/cmm_of_wasm) 
-> A compiler from WebAssembly to native code, via the OCaml backend.
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>OCaml</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>OCaml Compiler</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>AOT</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-    </tr>
-    </table>
 
 ## <a name="eosvm"></a>[EOSVM](https://github.com/EOSIO/eos-vm) 
 > EOS VM is designed from the ground up for the high demands of blockchain applications which require far more from a WebAssembly engine than those designed for web browsers or standards development.
@@ -270,65 +219,6 @@ _There are many WebAssembly host runtimes. This page is an opinionated short lis
     - module loading & linking via [`Manifest`](https://extism.org/docs/concepts/manifest)
     - WASI
     - non-WASI `http_request`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
-
-## <a name="fdvm"></a>[FDVM](https://github.com/funcdef/fdvm) 
-> WASM runtime to develop server-side WebAssembly applications.
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>JavaScript</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>NodeJS(V8)</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>JIT</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
 
 * **Platforms supported**
 
@@ -610,64 +500,6 @@ Happy New Moon with Report is an open-source implementation of WebAssembly writt
     </table>
 
 
-## <a name="life"></a>[Life](https://github.com/perlin-network/life) 
-> Life is a secure & fast WebAssembly VM built for decentralized applications, written in Go by Perlin Network.
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>Go</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>Custom</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>Interpreted</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
 ## <a name="lucet"></a>[Lucet](https://github.com/fastly/lucet) 
 > Lucet is a native WebAssembly compiler and runtime. It is designed to safely execute untrusted WebAssembly programs inside your application.
 
@@ -830,185 +662,6 @@ Happy New Moon with Report is an open-source implementation of WebAssembly writt
     </table>
 
 
-
-## <a name="motor"></a>[Motor](https://github.com/penberg/motor) 
-> Motor is a WebAssembly runtime, which aims for secure and efficient execution of WebAssembly programs
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>Rust</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>Dynasm</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>JIT</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-    </tr>
-    </table>
-
-
-## <a name="py-wasm"></a>[py-wasm](https://github.com/ethereum/py-wasm) 
-> A python implementation of the WebAssembly interpreter
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>Python</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>Custom</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>Interpreted</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
-
-## <a name="serverless-wasm"></a>[Serverless wasm](https://github.com/Geal/serverless-wasm) 
-> A small demo of Web Assembly's potential outside of browsers
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>Rust</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>Wasmi</td>
-        <td>Cranelift</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>Interpreted</td>
-        <td>JIT</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
-
 ## <a name="swam"></a>[Swam](https://github.com/satabin/swam) 
 > WebAssembly engine in Scala
 
@@ -1017,185 +670,6 @@ Happy New Moon with Report is an open-source implementation of WebAssembly writt
     <table>
     <tr>
         <td>Scala</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>Custom</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>Interpreted</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
-
-## <a name="vmir"></a>[VMIR](https://github.com/andoma/vmir) 
-> VMIR is a standalone library written in C that can parse and execute WebAssembly and LLVM Bitcode files
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>C</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>LLVM</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>Interpreted</td>
-        <td>JIT</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
-
-## <a name="wac"></a>[wac](https://github.com/kanaka/wac) 
-> A Minimal WebAssembly interpreter written in C.
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>C</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>Custom</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>Interpreted</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
-
-## <a name="wagon"></a>[wagon](https://github.com/go-interpreter/wagon) 
-> Wagon is a WebAssembly-based interpreter in Go, for Go.
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>Go</td>
     </tr>
     </table>
 
@@ -1303,65 +777,6 @@ Happy New Moon with Report is an open-source implementation of WebAssembly writt
         <td>macOS</td>
     </tr>
     </table>
-
-## <a name="warpy"></a>[Warpy](https://github.com/kanaka/warpy) 
-> WebAssembly interpreter in RPython.
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>RPython</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>RPython</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>JIT</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
 
 ## <a name="wasmedge"></a>[WasmEdge](https://github.com/WasmEdge/WasmEdge) 
 > A lightweight, high-performance, and extensible WebAssembly runtime for cloud native, edge, and decentralized applications. Project under CNCF.
@@ -1711,64 +1126,6 @@ Happy New Moon with Report is an open-source implementation of WebAssembly writt
     </tr>
     </table>
 
-## <a name="wasmrt"></a>[wasmrt](https://github.com/rhitchcock/wasmrt) 
-> wasmrt is a runtime built for native execution of WebAssembly modules (virtualized at first, eventually JIT).
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>C++</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>Custom</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>Interpreted</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
 ## <a name="wasmtime"></a>[Wasmtime](https://github.com/CraneStation/wasmtime) 
 > Wasmtime is a standalone wasm-only runtime for WebAssembly, using the Cranelift JIT
 
@@ -2036,65 +1393,6 @@ Happy New Moon with Report is an open-source implementation of WebAssembly writt
     </tr>
     </table>
 
-## <a name="webassembly"></a>[webassembly](https://github.com/dcodeIO/webassembly) 
-> An experimental, minimal toolkit and runtime on top of node to produce and run WebAssembly modules
-
-* **Languages written in**
-
-    <table>
-    <tr>
-        <td>JavaScript</td>
-    </tr>
-    </table>
-
-* **Compiler framework**
-
-    <table>
-    <tr>
-        <td>NodeJS(V8)</td>
-    </tr>
-    </table>
-
-
-* **Compilation / Execution modes**
-
-    <table>
-    <tr>
-        <td>JIT</td>
-    </tr>
-    </table>
-
-* **Interoperability with other languages**
-
-    - `N/A`
-
-* **Non-MVP features supported**
-
-    - `N/A`
-
-* **Host APIs supported**
-
-    - `N/A`
-
-* **Non-web standards**
-
-    - `N/A`
-
-* **Used by**
-
-    - `N/A`
-
-* **Platforms supported**
-
-    <table>
-    <tr>
-        <td>Linux</td>
-        <td>macOS</td>
-        <td>Windows</td>
-    </tr>
-    </table>
-
-
 ## <a name="wamr"></a>[WAMR](https://github.com/bytecodealliance/wasm-micro-runtime) 
 > WebAssembly Micro Runtime (WAMR) is a standalone WebAssembly (WASM) runtime with small footprint
 
@@ -2311,9 +1609,3 @@ Happy New Moon with Report is an open-source implementation of WebAssembly writt
     </tr>
     </table>
 -------------------
-
-## License
-
-[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
-
-To the extent possible under law, [Steve Akinyemi](https://github.com/appcypher) has waived all copyright and related or neighboring rights to this work.
