@@ -2,7 +2,7 @@
 
 ```
 canvas = {
-  const w = width + 28, h = height;
+  const w = width, h = width;
   const context = DOM.context2d(w, h, 1);
   const image = context.getImageData(0, 0, w, h);
   const indexes = [];
@@ -48,5 +48,4 @@ canvas = {
   context.putImageData(image, 0, 0);
   yield context.canvas;
 }
-height=width;
 ```

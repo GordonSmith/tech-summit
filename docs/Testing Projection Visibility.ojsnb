@@ -1,0 +1,213 @@
+{
+    "type": "notebook",
+    "id": "24aa1d51ca1b7b9d",
+    "slug": "testing-projection-visibility",
+    "trashed": false,
+    "description": "",
+    "likes": 41,
+    "publish_level": "live",
+    "forks": 14,
+    "fork_of": null,
+    "has_importers": false,
+    "update_time": "2023-02-28T03:41:46.403Z",
+    "first_public_version": 95,
+    "paused_version": null,
+    "publish_time": "2023-02-28T03:40:09.190Z",
+    "publish_version": 103,
+    "latest_version": 103,
+    "thumbnail": "84b36bd0fc8d015482d2c6661f3e5082cce3a620bb993a37435be92e22526228",
+    "default_thumbnail": "84b36bd0fc8d015482d2c6661f3e5082cce3a620bb993a37435be92e22526228",
+    "roles": [],
+    "sharing": null,
+    "tags": [],
+    "owner": {
+        "id": "863951e3ebe4c0ae",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/5af16e327a90b2873351dda8a596c0d2d3bf954f64523deefe80177c9764d0f7",
+        "login": "d3",
+        "name": "D3",
+        "bio": "Bring your data to life.",
+        "home_url": "https://d3js.org",
+        "type": "team",
+        "tier": "pro",
+        "following_count": 0,
+        "followers_count": 729,
+        "following": false
+    },
+    "creator": {
+        "id": "074c414ad1d825f5",
+        "github_login": "mbostock",
+        "avatar_url": "https://avatars.observableusercontent.com/avatar/82811927da99f8938001b2ef1f552ad2c47083e46ebc55a3a146a5a5848c4519",
+        "login": "mbostock",
+        "name": "Mike Bostock",
+        "bio": "Visualization toolmaker. Co-founder @observablehq. Creator @d3. Former @nytgraphics. Pronounced BOSS-tock.",
+        "home_url": "https://bost.ocks.org/mike/",
+        "tier": "pro",
+        "following_count": 17,
+        "followers_count": 381,
+        "following": false
+    },
+    "authors": [
+        {
+            "id": "074c414ad1d825f5",
+            "avatar_url": "https://avatars.observableusercontent.com/avatar/82811927da99f8938001b2ef1f552ad2c47083e46ebc55a3a146a5a5848c4519",
+            "name": "Mike Bostock",
+            "login": "mbostock",
+            "bio": "Visualization toolmaker. Co-founder @observablehq. Creator @d3. Former @nytgraphics. Pronounced BOSS-tock.",
+            "home_url": "https://bost.ocks.org/mike/",
+            "github_login": "mbostock",
+            "tier": "pro",
+            "approved": true,
+            "description": "",
+            "following_count": 17,
+            "followers_count": 381,
+            "following": false
+        }
+    ],
+    "collections": [
+        {
+            "id": "cabc4d5681f3b2dc",
+            "type": "public",
+            "slug": "d3-geo",
+            "title": "d3-geo",
+            "description": "Geographic projections, spherical shapes and spherical trigonometry.",
+            "update_time": "2019-03-07T07:26:08.286Z",
+            "pinned": true,
+            "ordered": false,
+            "custom_thumbnail": null,
+            "default_thumbnail": "12259210d72471a2e245b6b67dcc591f91395915751de8cc4aa008b14c52e601",
+            "thumbnail": "12259210d72471a2e245b6b67dcc591f91395915751de8cc4aa008b14c52e601",
+            "listing_count": 73,
+            "parent_collection_count": 1,
+            "owner": {
+                "id": "863951e3ebe4c0ae",
+                "avatar_url": "https://avatars.observableusercontent.com/avatar/5af16e327a90b2873351dda8a596c0d2d3bf954f64523deefe80177c9764d0f7",
+                "login": "d3",
+                "name": "D3",
+                "bio": "Bring your data to life.",
+                "home_url": "https://d3js.org",
+                "type": "team",
+                "tier": "pro",
+                "following_count": 0,
+                "followers_count": 729,
+                "following": false
+            }
+        }
+    ],
+    "files": [
+        {
+            "id": "3ba6ffc2faf6f7ee4be0ed0566243932de17192846f8645847a5f7b580b339f9ba604a70b017eeaa8c4a5e1a4032d5a87e828a8e73512d5445226b3b83ac7a29",
+            "url": "https://static.observableusercontent.com/files/3ba6ffc2faf6f7ee4be0ed0566243932de17192846f8645847a5f7b580b339f9ba604a70b017eeaa8c4a5e1a4032d5a87e828a8e73512d5445226b3b83ac7a29",
+            "download_url": "https://static.observableusercontent.com/files/3ba6ffc2faf6f7ee4be0ed0566243932de17192846f8645847a5f7b580b339f9ba604a70b017eeaa8c4a5e1a4032d5a87e828a8e73512d5445226b3b83ac7a29?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27airports.csv",
+            "name": "airports.csv",
+            "create_time": "2020-03-08T05:10:59.960Z",
+            "mime_type": "text/csv",
+            "status": "public",
+            "size": 172073,
+            "content_encoding": "gzip",
+            "private_bucket_id": null
+        },
+        {
+            "id": "f75ca3dc7c0b65cf225cea300e01e5e3cb5abf4ad75592936a2b6c79b797e933a208355d31d5b160f5b1db2a7de61fa402fe279d036a052211cd09462f524cad",
+            "url": "https://static.observableusercontent.com/files/f75ca3dc7c0b65cf225cea300e01e5e3cb5abf4ad75592936a2b6c79b797e933a208355d31d5b160f5b1db2a7de61fa402fe279d036a052211cd09462f524cad",
+            "download_url": "https://static.observableusercontent.com/files/f75ca3dc7c0b65cf225cea300e01e5e3cb5abf4ad75592936a2b6c79b797e933a208355d31d5b160f5b1db2a7de61fa402fe279d036a052211cd09462f524cad?response-content-disposition=attachment%3Bfilename*%3DUTF-8%27%27land-110m.json",
+            "name": "land-110m.json",
+            "create_time": "2020-03-08T05:11:46.218Z",
+            "mime_type": "application/json",
+            "status": "public",
+            "size": 55207,
+            "content_encoding": "gzip",
+            "private_bucket_id": null
+        }
+    ],
+    "comments": [],
+    "commenting_lock": null,
+    "suggestion_from": null,
+    "suggestions_to": [],
+    "version": 103,
+    "title": "Testing Projection Visibility",
+    "license": "isc",
+    "copyright": "Copyright 2020 Observable, Inc.",
+    "nodes": [
+        {
+            "id": 0,
+            "value": "md`# Testing Projection Visibility\n\nThis notebook demonstrates how to test if a point is visible in the given projection using a custom [*projection*.stream](https://github.com/d3/d3-geo/blob/master/README.md#projection_stream). Try dragging the globe below; the set of visible points will update accordingly.`",
+            "pinned": false,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 40,
+            "value": "visiblePoints",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 37,
+            "value": "function tester(projection) {\n  let visible;\n  const stream = projection.stream({point() { visible = true; }});\n  return ([x, y]) => (visible = false, stream.point(x, y), visible);\n}",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 29,
+            "value": "viewof visiblePoints = {\n  const context = DOM.context2d(width, height);\n\n  const projection = d3.geoOrthographic()\n      .fitExtent([[-1, -1], [width + 1, height + 1]], sphere)\n      .clipExtent([[-1, -1], [width + 1, height + 1]])\n      .rotate([0, -30]);\n\n  const path = d3.geoPath(projection, context)\n      .pointRadius(1.5);\n\n  function render() {\n    context.clearRect(0, 0, width, height);\n\n    context.beginPath();\n    path(graticule);\n    context.lineWidth = 0.5;\n    context.strokeStyle = \"#aaa\";\n    context.stroke();\n\n    context.beginPath();\n    path(land);\n    context.fillStyle = \"#ddd\";\n    context.fill();\n\n    context.beginPath();\n    path(sphere);\n    context.lineWidth = 1.5;\n    context.strokeStyle = \"#000\";\n    context.stroke();\n\n    context.beginPath();\n    path({type: \"MultiPoint\", coordinates: points});\n    context.fillStyle = \"#000\";\n    context.fill();\n\n    context.canvas.value = points.filter(tester(projection));\n    context.canvas.dispatchEvent(new CustomEvent(\"input\"));\n  }\n\n  return d3.select(context.canvas)\n    .call(zoom(projection).on(\"zoom.render\", render))\n    .call(render)\n    .node();\n}",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 24,
+            "value": "height = width",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 22,
+            "value": "sphere = ({type: \"Sphere\"})",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 21,
+            "value": "graticule = d3.geoGraticule10()",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 9,
+            "value": "points = (await FileAttachment(\"airports.csv\").csv()).map(({longitude, latitude}) => [+longitude, +latitude])",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 15,
+            "value": "land = FileAttachment(\"land-110m.json\").json().then(world => topojson.feature(world, world.objects.land))",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        },
+        {
+            "id": 7,
+            "value": "import {zoom} from \"@d3/versor-zooming\"",
+            "pinned": true,
+            "mode": "js",
+            "data": null,
+            "name": null
+        }
+    ],
+    "resolutions": []
+}
