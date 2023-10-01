@@ -1,14 +1,14 @@
-# Tech Summit 2023 - Edge Computing
+# Sample Web Application
 
-_This repository contains a sample web application hosted on the edge._
+_Sample Edge Hosted Web Application._
 
-## General
+## Features
 
-- [x] **Edge** - The application is hosted on the edge by [Fastly.com](https://developer.fastly.com/)
-- [x] **Serverless** - The application is serverless, using Fastlys [compute@edge](https://developer.fastly.com/learning/compute/)
-- [x] **Host** - The application is written in Rust and compiled to WebAssembly
-- [x] **Client** - The web client, uses [React](https://react.dev/) + [Fluent UI](https://github.com/microsoft/fluentui/wiki/Fluent-UI-React-v9-Release)
-- [x] **Lite** - 3,364 KB Single WASM file, including bundled 638 KB website
+- **Edge** - The application is hosted on the edge by [Fastly.com](https://developer.fastly.com/)
+- **Serverless** - The application is serverless, using Fastlys [compute@edge](https://developer.fastly.com/learning/compute/)
+- **Host** - The application is written in Rust and compiled to WebAssembly
+- **Client** - The web client, uses [React](https://react.dev/) + [Fluent UI](https://github.com/microsoft/fluentui/wiki/Fluent-UI-React-v9-Release)
+- **Lite** - 3,364 KB Single WASM file, including bundled 638 KB website
 
 ## API
 

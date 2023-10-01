@@ -1,5 +1,5 @@
 import * as React from "react";
-import { MoreHorizontalFilled, ChevronCircleRightRegular, VideoClipMultipleRegular, EngineRegular, GridDotsFilled, HomeFilled, BrainCircuitRegular } from "@fluentui/react-icons";
+import { MoreHorizontalFilled, ChevronCircleRightRegular, VideoClipMultipleRegular, GlobeShieldRegular, GridDotsFilled, HomeFilled, BrainCircuitRegular } from "@fluentui/react-icons";
 import { Toolbar, ToolbarButton, ToolbarDivider, Menu, MenuTrigger, MenuPopover, MenuList, MenuItem, MenuItemLink, Title2, TabList, Tab, makeStyles, ToolbarGroup, shorthands, LargeTitle, makeStaticStyles, Spinner, Link, } from "@fluentui/react-components";
 import type { SelectTabData, SelectTabEvent, TabValue, ToolbarProps } from "@fluentui/react-components";
 import { GitHubLogoIcon } from "@fluentui/react-icons-mdl2";
@@ -24,7 +24,7 @@ function pickIcon(name: string) {
         case "ai.md":
             return <BrainCircuitRegular />;
         case "runtimes.md":
-            return <EngineRegular />;
+            return <GlobeShieldRegular />;
         case "videos.md":
             return <VideoClipMultipleRegular />;
     }
@@ -112,7 +112,7 @@ export const Main = (props: Partial<ToolbarProps>) => {
                 <ToolbarGroup role="presentation" >
                     <ToolbarButton aria-label="Increase Font Size" icon={<GridDotsFilled />} />
                     <ToolbarDivider style={{ display: "inline-flex" }} />
-                    <Title2 className={classes.toolbarTitle}>Edge Computing</Title2>
+                    <Title2 className={classes.toolbarTitle}>Tech Summit 2023 - Edge Computing</Title2>
                     {/* <ToolbarDivider style={{ display: "inline-flex" }} /> */}
                 </ToolbarGroup>
                 <ToolbarGroup role="presentation">

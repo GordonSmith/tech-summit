@@ -31,16 +31,16 @@ export const Observable: React.FunctionComponent<ObservableProps> = ({
     const placeholder = React.useRef<HTMLDivElement>(null);
     const library = useConst(new Library());
     const runtime = useConst(new Runtime(library));
-    const [notebook, setNotebook] = React.useState<{ notebook?: compileFunc }>({ notebook: undefined });
+    const [notebook, setNotebook] = React.useState<compileFunc>();
     const forceUpdate = useForceUpdate();
 
     React.useEffect(() => {
         let cancel = false;
         if (path) {
             if (notebookCache.has(path)) {
-                setNotebook({ notebook: notebookCache.get(path) });
+                setNotebook(() => notebookCache.get(path));
             } else {
-                setNotebook({ notebook: undefined });
+                setNotebook(undefined);
                 fetch(`/fetch?path=${path}`).then(response => {
                     switch (fileExtension(path)) {
                         case "ojsnb":
@@ -64,7 +64,7 @@ export const Observable: React.FunctionComponent<ObservableProps> = ({
                 }).then(compiledNB => {
                     if (cancel === false) {
                         notebookCache.set(path, compiledNB);
-                        setNotebook({ notebook: compiledNB });
+                        setNotebook(() => compiledNB);
                     }
                 }).catch(e => {
                     console.error(e.message);
@@ -78,22 +78,22 @@ export const Observable: React.FunctionComponent<ObservableProps> = ({
 
     React.useEffect(() => {
         if (placeholder.current) {
-            if (notebook.notebook) {
-                placeholder.current.innerHTML = "";
-                notebook.notebook(runtime, name => {
+            placeholder.current.innerHTML = "";
+            if (notebook) {
+                notebook(runtime, name => {
                     const div = document.createElement("div");
                     placeholder.current!.appendChild(div);
                     return new Inspector(div);
                 });
             }
-            forceUpdate();
+            // forceUpdate();
         }
     }, [notebook]);
 
     const styles = useStyles();
 
     return <div>
-        {!notebook.notebook &&
+        {!notebook &&
             <Field validationMessage={`Fetching ${path}`} validationState="none">
                 <ProgressBar thickness="medium" />
             </Field>
