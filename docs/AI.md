@@ -2,6 +2,7 @@
 
 _Some interesting links relating to AI, Web Assembly and Edge computing_
 
+- [Cloudflare Workers AI](https://developers.cloudflare.com/workers-ai)
 - [Serverless AI Tutorial](https://developer.fermyon.com/spin/serverless-ai-tutorial?utm_medium=email&_hsmi=272985018&_hsenc=p2ANqtz-9f30MUYRX4cTwOf9FkdWH3HADDKLors7AjGq5BQJKZ_Zp_CJR_xgK0ycHx97___YY7Z9xSzOjcpd4zfEeXs0EPXGB83w&utm_content=272985018&utm_source=hs_email#serverless-ai-tutorial) by Fermyon
 - [Fast and Portable Llama2 Inference on the Heterogeneous Edge](https://blog.stackademic.com/fast-and-portable-llama2-inference-on-the-heterogeneous-edge-a62508e82359) by Michael Yuan
 - [ONNX Runtime](https://onnxruntime.ai/docs/) by Microsoft
